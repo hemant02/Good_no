@@ -1,0 +1,30 @@
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="AutomationRegression">
+
+	<parameter name="config-file" value="src/it/globalconfig.properties/" />
+    <!--  <parameter name="browser" value="chrome" />-->
+
+	<test name="Test">
+	
+		<!--  <classes>
+		<class name="it.pegaonline.BoomBTestIT" />
+		</classes>-->
+		
+		<groups>		
+		   <run>		
+		    <include name="ETAdata" />		
+		   </run>		
+		  </groups>
+		
+		<packages>
+			<package name="it.*" />
+		</packages>
+
+	</test>
+
+	<listeners>
+		<listener class-name="it.framework.listeners.verify.TestMethodListener" />
+		<listener class-name="it.framework.listeners.TestFailureListeners" />
+	</listeners>
+
+</suite>

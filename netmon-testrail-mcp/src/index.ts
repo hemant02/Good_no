@@ -25,7 +25,7 @@ function register(
   schema: z.ZodTypeAny,
   handler: (args: any) => Promise<unknown>
 ): void {
-  server.registerTool(name, { description, inputSchema: schema }, async (args) => {
+  server.registerTool(name, { description, inputSchema: (schema as z.ZodObject<any>).shape }, async (args) => {
     try {
       return result(await handler(args));
     } catch (error) {

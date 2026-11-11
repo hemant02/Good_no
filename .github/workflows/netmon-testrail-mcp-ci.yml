@@ -1,0 +1,25 @@
+name: NetMon TestRail MCP CI
+
+on:
+  push:
+    paths:
+      - "netmon-testrail-mcp/**"
+  pull_request:
+    paths:
+      - "netmon-testrail-mcp/**"
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: netmon-testrail-mcp
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+      - run: npm install
+      - run: npm run typecheck
+      - run: npm run build

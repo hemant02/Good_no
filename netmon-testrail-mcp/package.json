@@ -1,0 +1,25 @@
+{
+  "name": "netmon-testrail-mcp",
+  "version": "0.1.0",
+  "private": true,
+  "description": "NetMon-focused TestRail MCP server with QA review and approval workflow",
+  "type": "module",
+  "engines": { "node": ">=20.18.1" },
+  "scripts": {
+    "build": "tsc -p tsconfig.json",
+    "start": "node dist/index.js",
+    "dev": "tsx src/index.ts",
+    "typecheck": "tsc --noEmit -p tsconfig.json"
+  },
+  "dependencies": {
+    "@modelcontextprotocol/sdk": "^1.27.1",
+    "axios": "^1.16.0",
+    "dotenv": "^16.4.5",
+    "zod": "^3.24.2"
+  },
+  "devDependencies": {
+    "@types/node": "^22.13.14",
+    "tsx": "^4.19.3",
+    "typescript": "~5.7.2"
+  }
+}

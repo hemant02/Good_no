@@ -127,3 +127,8 @@ Each approved draft is created in the TestRail section specified by `sectionId`.
 ## Reference
 
 Inspired by the API coverage and MCP integration pattern from [bun913/mcp-testrail](https://github.com/bun913/mcp-testrail) (MIT-licensed reference repository). This POC is a NetMon-oriented implementation, not a fork or a copy of the reference source.
+
+
+## CI
+
+A repository-level GitHub Actions workflow runs TypeScript type-checking and a production build when files under this directory change.
